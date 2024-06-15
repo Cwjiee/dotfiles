@@ -1,0 +1,9 @@
+[user]
+	email = weijie@oyencov.com
+	name = weijie
+
+[alias]
+        tree = log --oneline --graph --decorate --all
+
+[init]
+	defaultBranch = main

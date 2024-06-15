@@ -1,0 +1,71 @@
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+title = "Alacritty"
+dynamic_title = true
+decorations = "Buttonless" #"Transparent"
+opacity = 1.0
+blur = true
+option_as_alt = "Both"
+startup_mode = "Maximized"
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+normal.family = "FiraCode Nerd Font Mono"
+size = 18
+
+[colors]
+cursor = { text = "#1E1E2E", cursor = "#F5E0DC" }
+vi_mode_cursor = { text = "#1E1E2E", cursor = "#B4BEFE" }
+selection = { text = "#1E1E2E", cursor = "#F5E0DC" }
+indexed_colors = [
+  { index = 16, color = "#FAB387" },
+  { index = 17, color = "#F5E0DC" }
+]
+
+[colors.primary]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+bright_foreground = "#CDD6F4"
+
+[colors.search]
+matches = { foreground = "#1E1E2E", background = "#A6ADC8" }
+focused_match = { foreground = "#1E1E2E", background = "#A6E3A1" }
+
+[colors.hints]
+start = { foreground = "#1E1E2E", background = "#F9E2AF" }
+end = { foreground = "#1E1E2E", background = "#A6ADC8" }
+
+[colors.normal]
+black = "#45475A"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#BAC2DE"
+
+[scrolling]
+history = 2000
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[keyboard]
+bindings = [
+  { key = "M", mods = "Control", action = "ToggleMaximized" },
+  { key = "V", mods = "Command | Control", action = "ToggleViMode" },
+  { key = "Return", mods = "Command", action = "Open" }
+]
