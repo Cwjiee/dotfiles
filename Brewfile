@@ -41,6 +41,7 @@ zegervdv/zathura/zathura
 zegervdv/zathura/zathura-pdf-poppler
 zoxide
 zsh-syntax-highlighting
+wget
 
 ## casks
 alacritty
