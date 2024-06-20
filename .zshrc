@@ -38,3 +38,8 @@ function commit() {
   git commit -m "$1"
   git push -u origin "$2"
 }
+
+function upbrew() {
+  brew leaves | > Brewfile
+  brew ls --casks | >> Brewfile
+}

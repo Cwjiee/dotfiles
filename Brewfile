@@ -10,6 +10,7 @@ fzf
 gh
 glow
 goreleaser/tap/goreleaser
+heroku/brew/heroku
 htop
 imagemagick
 jq
@@ -35,15 +36,14 @@ switchaudio-osx
 tmate
 tmux
 tree
+wget
 xdotool
+yazi
 zegervdv/zathura/girara
 zegervdv/zathura/zathura
 zegervdv/zathura/zathura-pdf-poppler
 zoxide
 zsh-syntax-highlighting
-wget
-
-## casks
 alacritty
 font-fira-code-nerd-font
 font-hack-nerd-font
