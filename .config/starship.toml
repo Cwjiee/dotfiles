@@ -9,7 +9,7 @@ vimcmd_symbol = "[❮](green)"
 disabled = true
 
 [git_status]
-disabled = true
+stashed = ""
 
 [line_break]
 disabled = false
