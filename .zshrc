@@ -5,8 +5,6 @@ HIST_STAMPS="dd/mm/yyyy"
 # zsh plugins
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-source ~/.config/catppuccin_mocha-zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export EDITOR='nvim'
 
