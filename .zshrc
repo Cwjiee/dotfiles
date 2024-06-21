@@ -25,6 +25,7 @@ alias vimrc="nvim ~/.config/nvim"
 alias cat="bat"
 alias neofetch="fastfetch"
 alias lz="lazygit"
+alias y="yazi"
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias config='/usr/bin/git --git-dir=/Users/weijie/.cfg/ --work-tree=/Users/weijie'
