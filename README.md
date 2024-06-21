@@ -14,10 +14,10 @@
 | Font | FiraCode Nerd Font Mono |
 
 <h2>Demo 1</h2>
-<img src="./examples/demo-1.png" />
+<img src="https://github.com/cwjiee/dotfiles/examples/demo-1.png" />
 
 <h2>Demo 2</h2>
-<img src="./examples/demo-2.png" />
+<img src="https://github.com/cwjiee/dotfiles/examples/demo-2.png" />
 
 <h2>Demo 3</h2>
-<img src="./examples/demo-3.png" />
+<img src="https://github.com/cwjiee/dotfiles/examples/demo-3.png" />
