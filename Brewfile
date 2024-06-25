@@ -18,6 +18,7 @@ jupyterlab
 koekeishiya/formulae/skhd
 koekeishiya/formulae/yabai
 lazygit
+lsd
 lua
 meson
 neovim
@@ -43,11 +44,11 @@ zegervdv/zathura/girara
 zegervdv/zathura/zathura
 zegervdv/zathura/zathura-pdf-poppler
 zoxide
-zsh-syntax-highlighting
 alacritty
 font-fira-code-nerd-font
 font-hack-nerd-font
 font-jetbrains-mono-nerd-font
 ngrok
+raycast
 rectangle
 sf-symbols

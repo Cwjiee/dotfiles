@@ -3,7 +3,8 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd/mm/yyyy"
 
 # zsh plugins
-plugins=(git)
+source ~/.oh-my-zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
@@ -27,15 +28,19 @@ alias y="yazi"
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias config='/usr/bin/git --git-dir=/Users/weijie/.cfg/ --work-tree=/Users/weijie'
+alias ls="lsd"
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
+# scripts under bin
+export PATH="$HOME/bin:$PATH"
+
 function commit() {
   git add .
-  git commit -m "$1"
-  git push -u origin "$2"
+  git commit -m "$*"
+  git push -u origin main
 }
 
 function upbrew() {
