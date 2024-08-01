@@ -1,0 +1,10 @@
+[
+  ./home-manager.nix
+  ./git.nix
+  ./tmux.nix
+  ./lazygit.nix
+  ./btop.nix
+  ./yazi.nix
+  ./starship.nix
+  ./bat.nix
+]
