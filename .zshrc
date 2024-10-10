@@ -24,26 +24,53 @@ alias vimrc="nvim ~/.config/nvim"
 alias cat="bat"
 alias neofetch="fastfetch"
 alias lz="lazygit"
-alias y="yazi"
-alias zshconfig="nvim ~/.zshrc"
-alias zshsource="source ~/.zshrc"
+alias zc="nvim ~/.zshrc"
+alias zs="source ~/.zshrc"
 alias config='/usr/bin/git --git-dir=/Users/weijie/.cfg/ --work-tree=/Users/weijie'
 alias ls="lsd"
+alias zf="zoxide query -l | fzf --reverse"
+alias ta="tmux attach || tmux new-session"
+alias tc="nvim ~/.tmux.conf"
+alias sp="source venv/bin/activate"
+alias todo="nvim ~/code/.todo"
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
 # scripts under bin
-export PATH="$HOME/bin:$PATH"
-
-function commit() {
-  git add .
-  git commit -m "$*"
-  git push -u origin main
-}
+export PATH="$HOME/bin:$PATH:$HOME/go/bin"
 
 function upbrew() {
   brew leaves | > Brewfile
   brew ls --casks | >> Brewfile
 }
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/weijie/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/weijie/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/weijie/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/weijie/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+# BLUE="\e[0;35m"
+# 
+# printf "$BLUE"
+# figlet -f larry3d -w 300 Hi, I\'m Wei Jie
