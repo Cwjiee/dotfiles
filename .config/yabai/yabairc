@@ -12,7 +12,7 @@ yabai -m config external_bar               all:49:0     \
                 window_opacity_duration    0.15         \
                 active_window_opacity      1.0          \
                 normal_window_opacity      0.95         \
-                window_border_width        2            \
+                window_border_width        5            \
                 window_border_hidpi        off          \
                 window_border_radius       11           \
                 window_animation_duration  0.22         \
@@ -31,10 +31,10 @@ yabai -m config external_bar               all:49:0     \
                 mouse_modifier              ctrl        \
                                                         \
                 layout                      bsp         \
-                top_padding                 10          \
-                bottom_padding              10          \
-                left_padding                20          \
-                right_padding               20          \
+                top_padding                 14          \
+                bottom_padding              14          \
+                left_padding                14          \
+                right_padding               14          \
                 window_gap                  8
 
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
@@ -75,7 +75,7 @@ setup_space 2 web
 setup_space 3 media
 
 # move some apps automatically to specific spaces
-yabai -m rule --add app="^Alacritty$" space=^1
+yabai -m rule --add app="^Kitty$" space=^1
 yabai -m rule --add app="^Firefox$" space=^2
 yabai -m rule --add app="^Spotify$" space=3
 yabai -m rule --add app="^Obsidian$" space=3
