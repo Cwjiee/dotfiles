@@ -33,6 +33,7 @@ alias ta="tmux attach || tmux new-session"
 alias tc="nvim ~/.tmux.conf"
 alias sp="source venv/bin/activate"
 alias todo="nvim ~/code/.todo"
+alias dbuild="darwin-rebuild switch --flake ~/nix#mac"
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
@@ -40,6 +41,7 @@ eval "$(starship init zsh)"
 
 # scripts under bin
 export PATH="$HOME/bin:$PATH:$HOME/go/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 function upbrew() {
   brew leaves | > Brewfile

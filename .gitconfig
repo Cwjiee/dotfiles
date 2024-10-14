@@ -1,9 +1,0 @@
-[user]
-	email = jackchong398@gmail.com
-	name = weijie
-
-[alias]
-        tree = log --oneline --graph --decorate --all
-
-[init]
-	defaultBranch = main

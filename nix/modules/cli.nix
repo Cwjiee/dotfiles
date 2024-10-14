@@ -1,7 +1,27 @@
 {
+  programs.bat.enable = true;
+  programs.btop.enable = true;
+  programs.ripgrep.enable = true;
+  programs.lsd.enable = true;
+  programs.fzf.enable = true;
+  # programs.gh.enable = true;
+  programs.zoxide.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "weijie";
+    userEmail = "jackchong398@gmail.com";
+    aliases = {
+      tree = "log --oneline --graph --decorate --all";
+    };
+    extraConfig = {
+      credential.helper = "osxkeychain";
+      init.defaultBranch = "main";
+    };
+  };
+
   programs.starship = {
     enable = true;
-    catppuccin.enable = true;
     settings = {
       character = {
         success_symbol = "[❯](bold green)";

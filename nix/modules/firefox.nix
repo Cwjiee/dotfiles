@@ -1,5 +1,5 @@
 {
-  programs.bat = {
+  programs.firefox = {
     enable = true;
   };
 }
