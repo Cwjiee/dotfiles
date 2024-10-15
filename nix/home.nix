@@ -6,21 +6,22 @@
   home.username = "weijie";
   home.homeDirectory = "/Users/weijie";
   home.stateVersion = "23.05";
-  home.packages = [
-    pkgs.bat
-    pkgs.btop
-    pkgs.lazygit
-    pkgs.starship
-    pkgs.git
-    pkgs.yazi
-    pkgs.fzf
-    pkgs.ripgrep
-    pkgs.lsd
-    pkgs.tmate
-    # pkgs.gh
-    pkgs.zoxide
-    pkgs.wezterm
-    # pkgs.tmux
+  home.packages = with pkgs; [
+    bat
+    btop
+    lazygit
+    starship
+    git
+    yazi
+    fzf
+    ripgrep
+    lsd
+    tmate
+    # gh
+    zoxide
+    wezterm
+    # tmux
+    zsh
   ];
 
   home.file = {

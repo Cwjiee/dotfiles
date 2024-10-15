@@ -7,6 +7,12 @@
     terminal = "xterm-256color";
     keyMode = "vi";
     customPaneNavigationAndResize = true;
+    
+    # plugins = with pkgs.tmuxPlugins; [
+    #   better-mouse-mode
+    #   tokyo-night
+    # ];
+
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -g detach-on-destroy off
@@ -51,10 +57,6 @@
 
       set -g @catppuccin_directory_text "#{pane_current_path}"
     '';
-
-#    plugins = with pkgs; [
-#      tmuxPlugins.better-mouse-mode
-#    ];
   };
 
   programs.tmate = {

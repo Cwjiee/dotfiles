@@ -12,8 +12,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, catppuccin, home-manager }:
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Chongs-Laptop
+      # $ darwin-rebuild build --flake .#mac
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ 

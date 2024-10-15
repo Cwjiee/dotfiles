@@ -6,9 +6,10 @@
 
       config.font = wezterm.font("FiraCode Nerd Font")
       config.font_size = 16.0
-      config.hide_tab_bar_if_only_one_tab = true
+      -- config.hide_tab_bar_if_only_one_tab = true
       config.front_end = "WebGpu"
       config.color_scheme = 'Catppuccin Mocha'
+      config.window_background_opacity = 0.95
 
       config.keys = {
         {key="f", mods="CMD|CTRL", action="ToggleFullScreen"},

@@ -4,4 +4,5 @@
   ./cli.nix
   ./tui.nix
   ./wezterm.nix
+  ./zsh.nix
 ]
