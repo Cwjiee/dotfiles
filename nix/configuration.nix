@@ -31,14 +31,14 @@
   system.defaults = {
     dock.autohide = true;
     dock.show-recents = false;
-    # dock.persistent.apps = [
-    #   "/Applications/Firefox.app"
-    #   "/Applications/Slack.app"
-    #   "/Applications/Obsidian.app"
-    #   "/Applications/Spotify.app"
-    #   "${pkgs.wezterm}/Applications/Wezterm.app"
-    #   "/Applications/Discord.app"
-    # ];
+    dock.persistent-apps = [
+      "/Applications/Firefox.app"
+      "/Applications/Slack.app"
+      "/Applications/Obsidian.app"
+      "/Applications/Spotify.app"
+      # "${pkgs.wezterm}/Applications/Wezterm.app"
+      "/Applications/Discord.app"
+    ];
     finder.FXPreferredViewStyle = "clmv";
     NSGlobalDomain.AppleInterfaceStyle = "Dark";
     NSGlobalDomain.KeyRepeat = 2;

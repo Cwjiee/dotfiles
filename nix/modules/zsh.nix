@@ -38,12 +38,20 @@
       alias nxswitch="darwin-rebuild switch --flake ~/nix#mac"
       alias c="clear"
 
+      alias ga="git add"
+      alias gc="git commit"
+      alias gp="git push"
+      alias gst="git status"
+      alias glg="git log"
+      alias gco="git checkout"
+
       eval "$(zoxide init zsh)"
       eval "$(fzf --zsh)"
       eval "$(starship init zsh)"
 
       # scripts under bin
       export PATH="$HOME/bin:$PATH:$HOME/go/bin"
+      export GOPATH="$HOME"
       export XDG_CONFIG_HOME="$HOME/.config"
 
       function upbrew() {

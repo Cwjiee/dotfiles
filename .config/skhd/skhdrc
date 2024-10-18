@@ -66,6 +66,6 @@ ctrl + alt - r : yabai --restart-service
 shift + lalt - space : sketchybar --bar hidden=toggle
 
 # open terminal
-lalt - return : open /Applications/Kitty.app
+lalt - return : open /Applications/WezTerm.app
 # open firefox
 lalt - f : open /Applications/Firefox.app
