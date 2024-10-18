@@ -6,6 +6,7 @@
   programs.fzf.enable = true;
   # programs.gh.enable = true;
   programs.zoxide.enable = true;
+  programs.fastfetch.enable = true;
 
   programs.git = {
     enable = true;

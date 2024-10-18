@@ -29,7 +29,6 @@
       alias zc="nvim ~/.zshrc"
       alias zs="source ~/.zshrc"
       alias config='/usr/bin/git --git-dir=/Users/weijie/.cfg/ --work-tree=/Users/weijie'
-      alias ls="lsd"
       alias zf="zoxide query -l | fzf --reverse"
       alias ta="tmux attach || tmux new-session"
       alias tc="nvim ~/.tmux.conf"
@@ -37,6 +36,7 @@
       alias todo="nvim ~/code/.todo"
       alias nxswitch="darwin-rebuild switch --flake ~/nix#mac"
       alias c="clear"
+      alias prev="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 
       alias ga="git add"
       alias gc="git commit"
@@ -44,6 +44,10 @@
       alias gst="git status"
       alias glg="git log"
       alias gco="git checkout"
+
+      alias ls="lsd"
+      alias ll="lsd -l"
+      alias la="lsd -all"
 
       eval "$(zoxide init zsh)"
       eval "$(fzf --zsh)"

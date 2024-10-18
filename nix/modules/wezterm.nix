@@ -168,6 +168,11 @@
         },
       }
 
+      config.command_palette_bg_color = "#b4befe"
+      config.command_palette_fg_color = "#1e1e2e"
+      config.command_palette_font_size = 16.0
+      config.command_palette_rows = 8
+
       wezterm.plugin.require("https://github.com/nekowinston/wezterm-bar").apply_to_config(config, {
         position = "bottom",
         max_width = 32,

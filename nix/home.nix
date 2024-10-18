@@ -22,6 +22,9 @@
     wezterm
     # tmux
     zsh
+    fastfetch
+    silver-searcher
+    croc
   ];
 
   home.file = {

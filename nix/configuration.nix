@@ -33,7 +33,6 @@
     dock.show-recents = false;
     dock.persistent-apps = [
       "/Applications/Firefox.app"
-      "/Applications/Slack.app"
       "/Applications/Obsidian.app"
       "/Applications/Spotify.app"
       # "${pkgs.wezterm}/Applications/Wezterm.app"
