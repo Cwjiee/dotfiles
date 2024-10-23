@@ -14,7 +14,10 @@ darwin-rebuild switch --flake ~/nix#mac
 ```
 
 ### Arch Linux
-*work in progress*
+- *work in progress*
+```
+home-manager switch --flake ~/nix#arch
+```
 
 
 ## My setup
