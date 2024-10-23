@@ -1,13 +1,30 @@
-# Dofiles
+# Nix Dofiles
+
+My nix configuration for 
+- MacOS
+- Arch Linux (work in progress)
+
+
+## Usage
+
+### MacOS
+- rebuild and switch system configuration
+```
+darwin-rebuild switch --flake ~/nix#mac
+```
+
+### Arch Linux
+*work in progress*
+
 
 ## My setup
 
 | Config    | <!-- -->    |
 |-------------|-------------|
-| Terminal | wezterm |
-| Shell | zsh |
-| Prompt | starship |
-| Editor |[neovim](https://github.com/cwjiee/nvim-config) |
-| Terminal multiplexer | tmux |
+| Terminal | WezTerm |
+| Shell | Zsh |
+| Prompt | Starship |
+| Editor |[Neovim](https://github.com/cwjiee/nvim-config) |
+| Terminal multiplexer | Tmux |
 | Colorscheme | Catppuccin (superior colorscheme XD) |
 | Font | FiraCode Nerd Font Mono |
