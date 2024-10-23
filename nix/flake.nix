@@ -1,5 +1,5 @@
 {
-  description = "Wei Jie's Darwin system flake";
+  description = "Wei Jie's Nix config MacOS and Arch Linux";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -11,12 +11,15 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, catppuccin, home-manager }:
-    {
+    let
+      systemMac = "aarch64-darwin";
+      systemLinux = "x86_64-linux";
+    in {
       # $ darwin-rebuild build --flake .#mac
-      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+      darwinConfigurations.mac = nix-darwin.lib.darwinSystem {
+        system = systemMac;
         modules = [ 
-          ./configuration.nix
+          ./home/macos/configuration.nix
           home-manager.darwinModules.home-manager
           # catppuccin.nixosModules.catppuccin
           {
@@ -25,7 +28,8 @@
 	    # home-manager.backupFileExtension = "backup";
             home-manager.users.weijie = {
               imports = [
-                ./home.nix
+                ./home/macos/macos.nix
+                # ./home.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
             };
@@ -33,6 +37,17 @@
         ];
       };
 
-      darwinPackages = self.darwinConfigurations."mac".pkgs;
+      darwinPackages = self.darwinConfigurations.mac.pkgs;
+
+      # homeManagerConfigurations.arch = home-manager.lib.homeManagerConfiguration {
+      #   pkgs = import nixpkgs {
+      #     system = systemLinux;
+      #   };
+
+      #   modules = [
+      #     ./home/common/home.nix
+      #     ./home/arch/linux.nix
+      #   ];
+      # };
     };
 }

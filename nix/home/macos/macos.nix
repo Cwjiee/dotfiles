@@ -64,5 +64,5 @@
     flavor = "mocha";
   };
 
-  imports = import ./modules;
+  imports = import ../modules;
 }
