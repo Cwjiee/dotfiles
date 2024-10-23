@@ -6,9 +6,17 @@ My nix configuration for
 
 
 ## Usage
+**Clone this repository:**
+
+```
+git clone https://github.com/cwjiee/dotfiles ~/nix
+```
+<br>
+
+**Then, rebuild and switch system configuration**
 
 ### MacOS
-- rebuild and switch system configuration
+
 ```
 darwin-rebuild switch --flake ~/nix#mac
 ```
@@ -18,6 +26,14 @@ darwin-rebuild switch --flake ~/nix#mac
 ```
 home-manager switch --flake ~/nix#arch
 ```
+
+## Contents
+- CLIs and TUIs
+- Configured terminal
+- System settings
+- Language version managers
+- Nix lsp
+- Essential env variables and aliases
 
 
 ## My setup
