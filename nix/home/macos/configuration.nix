@@ -10,8 +10,12 @@
     ansible
     imagemagick
     poppler
-    rbenv
     heroku
+    rbenv
+    rustup
+
+    nixfmt-rfc-style
+    nixd
   ];
 
   # activation script to move mac apps to Application
@@ -82,4 +86,5 @@
     name = "weijie";
     home = "/Users/weijie";
   };
+
 }

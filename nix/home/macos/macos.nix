@@ -29,6 +29,7 @@
     asciinema
     cmatrix
     figlet
+    htop
     # neovim
   ];
 
