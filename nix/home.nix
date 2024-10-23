@@ -17,14 +17,19 @@
     ripgrep
     lsd
     tmate
-    # gh
+    gh
     zoxide
     wezterm
-    # tmux
+    tmux
     zsh
     fastfetch
+    fd
     silver-searcher
     croc
+    asciinema
+    cmatrix
+    figlet
+    # neovim
   ];
 
   home.file = {

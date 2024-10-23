@@ -5,4 +5,5 @@
   ./tui.nix
   ./wezterm.nix
   ./zsh.nix
+  ./version-managers.nix
 ]

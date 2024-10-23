@@ -5,6 +5,13 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     mkalias # enabling apps into spotlight
+    wget
+    docker
+    ansible
+    imagemagick
+    poppler
+    rbenv
+    heroku
   ];
 
   # activation script to move mac apps to Application
@@ -35,7 +42,7 @@
       "/Applications/Firefox.app"
       "/Applications/Obsidian.app"
       "/Applications/Spotify.app"
-      # "${pkgs.wezterm}/Applications/Wezterm.app"
+      "${pkgs.wezterm}/Applications/WezTerm.app"
       "/Applications/Discord.app"
     ];
     finder.FXPreferredViewStyle = "clmv";

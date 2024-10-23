@@ -24,8 +24,13 @@
       config.hide_tab_bar_if_only_one_tab = true
       config.front_end = "WebGpu"
       config.color_scheme = 'Catppuccin Mocha'
-      config.window_background_opacity = 0.95
-      config.macos_window_background_blur =15
+      config.window_background_image = '/Users/weijie/Documents/wallpapers/Lowpoly_Street.png'
+      config.window_background_image_hsb = {
+        brightness = 0.1,
+      }
+      config.window_background_opacity = 0.9
+      config.text_background_opacity = 0.9
+      config.macos_window_background_blur = 20
       config.use_fancy_tab_bar = true
       config.show_new_tab_button_in_tab_bar = false
 

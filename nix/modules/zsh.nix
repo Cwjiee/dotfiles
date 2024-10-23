@@ -71,6 +71,12 @@
               fi
               rm -f -- "$tmp"
       }
+
+      function blastoff() {
+        echo "🚀"
+      }
+
+      starship_precmd_user_func="blastoff"
     '';
   };
 }

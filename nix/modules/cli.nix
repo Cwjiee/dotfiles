@@ -4,9 +4,11 @@
   programs.ripgrep.enable = true;
   programs.lsd.enable = true;
   programs.fzf.enable = true;
-  # programs.gh.enable = true;
   programs.zoxide.enable = true;
   programs.fastfetch.enable = true;
+  programs.fd.enable = true;
+  programs.jq.enable = true;
+  # programs.neovim.enable = true;
 
   programs.git = {
     enable = true;
@@ -21,6 +23,24 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+
+      editor = "nvim";
+
+      prompt = "enabled";
+
+      pager = "cat";
+
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view";
+      };
+    };
+  };
+
   programs.starship = {
     enable = true;
     settings = {
@@ -30,12 +50,12 @@
         vimcmd_symbol = "[❮](green)";
       };
 
-      cmd_duration = {
-        disabled = true;
-      };
-
       git_status = {
         stashed = "";
+      };
+
+      cmd_duration = {
+        disabled = false;
       };
 
       line_break = {
@@ -253,6 +273,10 @@
       zig = {
         symbol = " ";
       };
+
+      continuation_prompt = "▶▶ ";
     };
   };
+
+  # programs.neovim.enable = true;
 }
