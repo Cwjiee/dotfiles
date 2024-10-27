@@ -30,10 +30,12 @@
     cmatrix
     figlet
     htop
-    # neovim
+    neovim
   ];
 
   home.file = {
+    ".config/nvim".source = ~/dotfiles/nvim;
+    ".config/wezterm".source = ~/dotfiles/wezterm;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -46,16 +48,6 @@
     # '';
   };
 
-  # You can also manage environment variables but you will have to manually
-  # source
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/davish/etc/profile.d/hm-session-vars.sh
-  #
-  # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
   };

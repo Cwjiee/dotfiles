@@ -44,6 +44,7 @@
       alias gst="git status"
       alias glg="git log"
       alias gco="git checkout"
+      alias gd="git diff"
 
       alias ls="lsd"
       alias ll="lsd -l"
@@ -71,12 +72,6 @@
               fi
               rm -f -- "$tmp"
       }
-
-      function blastoff() {
-        echo "🚀"
-      }
-
-      starship_precmd_user_func="blastoff"
     '';
   };
 }
