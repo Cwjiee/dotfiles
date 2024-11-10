@@ -1,3 +1,5 @@
+{pkgs, ...}:
+
 {
   programs.zsh = {
     enable = true;
@@ -21,6 +23,10 @@
       [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
       [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
 
+      # asdf
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      . "${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash"
+
       alias v="nvim"
       alias vimrc="nvim ~/.config/nvim"
       alias cat="bat"
@@ -32,9 +38,9 @@
       alias zf="zoxide query -l | fzf --reverse"
       alias ta="tmux attach || tmux new-session"
       alias tc="nvim ~/.tmux.conf"
-      alias sp="source venv/bin/activate"
+      alias sp="source .venv/bin/activate"
       alias todo="nvim ~/code/.todo"
-      alias nxswitch="darwin-rebuild switch --flake ~/nix#mac"
+      alias nxswitch="darwin-rebuild switch --flake ~/nix#mac --impure"
       alias c="clear"
       alias prev="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 
@@ -58,6 +64,8 @@
       export PATH="$HOME/bin:$PATH:$HOME/go/bin"
       export GOPATH="$HOME"
       export XDG_CONFIG_HOME="$HOME/.config"
+      export JAVA_HOME=$(/usr/libexec/java_home -v 23.0.1)
+      export PATH=$JAVA_HOME/bin:$PATH
 
       function upbrew() {
         brew leaves | > Brewfile

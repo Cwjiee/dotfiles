@@ -13,6 +13,7 @@
     heroku
     rbenv
     rustup
+    asdf-vm
 
     nixfmt-rfc-style
     nixd
