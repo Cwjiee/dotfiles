@@ -80,6 +80,37 @@
               fi
               rm -f -- "$tmp"
       }
+
+      function jc() {
+        if [ $# -eq 0 ]; then
+            echo "Usage: $0 <JavaFileName.java>"
+        fi
+
+        file=$1
+
+        if [ ! -f "$file" ]; then
+            echo "Error: File $file not found!"
+        fi
+
+        classname=$(basename "$file" .java)
+
+        javac "$file"
+
+        if [ $? -eq 0 ]; then
+            # echo "Compilation successful! Running $classname..."
+            # echo "----------------------------------------"
+            java "$classname"
+        else
+            echo "Compilation failed!"
+        fi
+      }
+
+      function open_all() {
+        open -a Spotify
+        open -a Firefox
+        open -a Discord
+        open -a Obsidian
+      }
     '';
   };
 }

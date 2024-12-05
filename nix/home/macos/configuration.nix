@@ -14,6 +14,8 @@
     rbenv
     rustup
     asdf-vm
+    terraform
+    awscli2
 
     nixfmt-rfc-style
     nixd

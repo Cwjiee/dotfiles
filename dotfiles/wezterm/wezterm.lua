@@ -16,21 +16,23 @@ workspace_switcher.apply_to_config(config)
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
+config.initial_cols = 106
+config.initial_rows = 21
 config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = 16.0
 config.hide_tab_bar_if_only_one_tab = true
 config.front_end = "WebGpu"
 config.color_scheme = 'Catppuccin Mocha'
-config.window_background_image = '/Users/weijie/Documents/wallpapers/Lowpoly_Street.png'
-config.window_background_image_hsb = { brightness = 0.1 }
-config.window_background_opacity = 0.9
+-- config.window_background_image = '/Users/weijie/Documents/wallpapers/Lowpoly_Street.png'
+config.window_background_image_hsb = { brightness = 0.1, saturation = 0.7 }
+config.window_background_opacity = 0.70
 config.text_background_opacity = 0.7
-config.macos_window_background_blur = 90
+config.macos_window_background_blur = 0
 config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
 
-config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'm', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
   { key = "f", mods = "CMD|CTRL", action = "ToggleFullScreen" },
 

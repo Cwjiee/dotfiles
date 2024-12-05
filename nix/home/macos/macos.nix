@@ -20,7 +20,7 @@
     gh
     zoxide
     wezterm
-    tmux
+    # tmux
     zsh
     fastfetch
     fd
@@ -31,6 +31,7 @@
     figlet
     htop
     neovim
+    slides
   ];
 
   home.file = {

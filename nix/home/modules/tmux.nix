@@ -41,7 +41,7 @@
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -g detach-on-destroy off
       set -g @t-fzf-prompt '  '
-      set -g status-position bottom
+      set -g status-position top
 
       setw -g mode-keys vi
       set -g mouse on
