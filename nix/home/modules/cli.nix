@@ -8,7 +8,6 @@
   programs.fastfetch.enable = true;
   programs.fd.enable = true;
   programs.jq.enable = true;
-  # programs.neovim.enable = true;
 
   programs.git = {
     enable = true;

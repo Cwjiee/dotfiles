@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     bat
     btop
-    lazygit
+    # lazygit
     starship
     git
     yazi
@@ -19,8 +19,6 @@
     tmate
     gh
     zoxide
-    wezterm
-    # tmux
     zsh
     fastfetch
     fd
@@ -33,11 +31,6 @@
     neovim
     slides
   ];
-
-  home.file = {
-    ".config/nvim".source = ~/dotfiles/nvim;
-    ".config/wezterm".source = ~/dotfiles/wezterm;
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -1,0 +1,177 @@
+return {}
+-- return {
+--   {
+--     "mfussenegger/nvim-dap",
+--     dependencies = {
+--       "mfussenegger/nvim-jdtls",
+--       "nvim-neotest/nvim-nio",
+--       "rcarriga/nvim-dap-ui",
+--       "theHamsta/nvim-dap-virtual-text",
+--       "williamboman/mason.nvim",
+--       "jay-babu/mason-nvim-dap.nvim",
+--     },
+--     config = function()
+--       local dap = require("dap")
+--       local dapui = require("dapui")
+-- 
+--       vim.keymap.set("n", "<F5>", dap.continue)
+--       vim.keymap.set("n", "<F10>", dap.step_over)
+--       vim.keymap.set("n", "<F11>", dap.step_into)
+--       vim.keymap.set("n", "<F12>", dap.step_out)
+--       vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+--       vim.keymap.set("n", "<leader>B", function()
+--         dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+--       end)
+-- 
+--       dapui.setup({
+--         layouts = {
+--           {
+--             elements = {
+--               "scopes",
+--               "breakpoints",
+--               "stacks",
+--               "watches",
+--             },
+--             size = 40,
+--             position = "left",
+--           },
+--           {
+--             elements = {
+--               "repl",
+--               "console",
+--             },
+--             size = 10,
+--             position = "bottom",
+--           },
+--         },
+--       })
+-- 
+--       require("nvim-dap-virtual-text").setup()
+-- 
+--       local java_dap_group = vim.api.nvim_create_augroup("JavaDAP", { clear = true })
+--       vim.api.nvim_create_autocmd("FileType", {
+--         pattern = "java",
+--         group= java_dap_group,
+--         callback = function ()
+--           dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+--           dap.listeners.before.event_terminated["dapui_config"] = dapui.close
+--           dap.listeners.before.event_exited["dapui_config"] = dapui.close
+--         end
+--       })
+--     end
+--   },
+-- 
+--   {
+--     "jay-babu/mason-nvim-dap.nvim",
+--     dependencies = {
+--       "williamboman/mason.nvim",
+--       "nvim-neotest/nvim-nio"
+--     },
+--     opts = {
+--       ensure_installed = { "java" },
+--       automatic_installation = true,
+--       handlers = {},
+--     },
+--     ft = "java"
+--   },
+-- 
+--   {
+--     "mfussenegger/nvim-jdtls",
+--     ft = "java",
+--     config = function()
+--       -- Find the path to your Java project's root directory
+--       local root_markers = { ".git", "main.java" }
+--       local root_dir = require("jdtls.setup").find_root(root_markers)
+-- 
+--       -- Path to eclipse.jdt.ls (you might need to adjust this)
+--       local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+--       local path_to_lsp_server = jdtls_path
+--       local path_to_plugins = jdtls_path .. "/plugins/"
+--       local path_to_jar = vim.fn.glob(path_to_plugins .. "org.eclipse.equinox.launcher_*.jar")
+-- 
+--       -- Configuration for the language server
+--       local config = {
+--         cmd = {
+--           "java",
+--           "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+--           "-Dosgi.bundles.defaultStartLevel=4",
+--           "-Declipse.product=org.eclipse.jdt.ls.core.product",
+--           "-Dlog.protocol=true",
+--           "-Dlog.level=ALL",
+--           "-Xms1g",
+--           "--add-modules=ALL-SYSTEM",
+--           "--add-opens",
+--           "java.base/java.util=ALL-UNNAMED",
+--           "--add-opens",
+--           "java.base/java.lang=ALL-UNNAMED",
+--           "-jar",
+--           path_to_jar,
+--           "-configuration",
+--           jdtls_path .. "/config_mac", -- Change to config_mac or config_win for other OS
+--           "-data",
+--           vim.fn.expand("~/.cache/jdtls/workspace/") .. vim.fn.fnamemodify(root_dir, ":p:h:t"),
+--         },
+-- 
+--         root_dir = root_dir,
+-- 
+--         settings = {
+--           java = {
+--             signatureHelp = { enabled = true },
+--             contentProvider = { preferred = "fernflower" },
+--             completion = {
+--               favoriteStaticMembers = {
+--                 "org.junit.Assert.*",
+--                 "org.junit.jupiter.api.Assertions.*",
+--                 "org.mockito.Mockito.*",
+--                 "org.mockito.ArgumentMatchers.*",
+--                 "org.mockito.Answers.*",
+--               },
+--             },
+--             sources = {
+--               organizeImports = {
+--                 starThreshold = 9999,
+--                 staticStarThreshold = 9999,
+--               },
+--             },
+--             codeGeneration = {
+--               toString = {
+--                 template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}",
+--               },
+--             },
+--             configuration = {
+--               runtimes = {
+--                 -- Add your JDK installations here
+--                 {
+--                   name = "JavaSE-23",
+--                   path = "/Library/Java/JavaVirtualMachines/jdk-23.jdk", -- /Contents/Home/bin/java/usr/bin/java", -- Change to your JDK path
+--                 },
+--                 -- Add other JDK versions if needed
+--               },
+--             },
+--           },
+--         },
+-- 
+--         init_options = {
+--           bundles = {},
+--         },
+--       }
+-- 
+--       -- Setup DAP for Java through jdtls
+--       config.on_attach = function(client, bufnr)
+--         require("jdtls").setup_dap({ hotcodereplace = "auto" })
+--         require("jdtls.dap").setup_dap_main_class_configs()
+-- 
+--         -- Additional keymaps for Java
+--         local map = function(mode, lhs, rhs, desc)
+--           vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = bufnr })
+--         end
+-- 
+--         map("n", "<leader>df", "<cmd>lua require('jdtls').test_class()<cr>", "Test Class (DAP)")
+--         map("n", "<leader>dn", "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test Nearest Method (DAP)")
+--       end
+-- 
+--       -- Start the language server
+--       require("jdtls").start_or_attach(config)
+--     end,
+--   },
+-- }

@@ -15,8 +15,8 @@
     };
   };
 
-  programs.lazygit = {
-    enable = true;
-    catppuccin.enable = true;
-  };
+  # programs.lazygit = {
+  #   enable = true;
+  #   catppuccin.enable = true;
+  # };
 }
