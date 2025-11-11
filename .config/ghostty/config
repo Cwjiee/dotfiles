@@ -1,0 +1,35 @@
+theme = Catppuccin Mocha
+font-family = Maple Mono NF
+font-size = 15
+
+quick-terminal-position = center
+mouse-hide-while-typing = true
+# window-save-state = always
+
+background-opacity = 0.85
+background-blur = true
+
+window-subtitle = false
+window-padding-balance = true
+
+macos-icon = retro
+# macos-icon = custom
+# macos-custom-icon = ~/.config/ghostty/ghostty.png
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
+
+# cursor-style = block
+# cursor-style-blink = true
+
+# custom-shader = ./trails/cursor_trail.glsl
+# custom-shader = ./trails/subtle_trail.glsl
+# custom-shader = ./trails/amber_cursor.glsl
+# custom-shader = ./ghostty-shaders/glitchy.glsl
+# custom-shader = ./ghostty-shaders/drunkard.glsl
+# custom-shader = ./ghostty-shaders/fireworks-rockets.glsl
+
+keybind = global:cmd+backquote=toggle_quick_terminal
+keybind = global:opt+h=goto_split:left
+keybind = global:opt+j=goto_split:down
+keybind = global:opt+k=goto_split:up
+keybind = global:opt+l=goto_split:right
