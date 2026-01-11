@@ -1,7 +1,7 @@
 return {
   {
     'andweeb/presence.nvim',
-    enabled = true,
+    event = "VeryLazy",
     config = function()
       require("presence").setup({
         editing_text        = "Manhandling %s",               -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)

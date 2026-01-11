@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  cmd = "Telescope",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     require('telescope').setup{
@@ -13,14 +14,24 @@ return {
             preview_width = 0.60,
           },
         },
-        -- sorting_strategy = "ascending"
+        file_ignore_patterns = {
+          "node_modules/",
+          "build/",
+          "dist/",
+        },
+        sorting_strategy = "ascending"
       },
+      pickers = {
+        find_files = {
+          show_hidden = true,
+        },
+      }
     }
-
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>gt', builtin.git_status, {})
-    vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
-  end
+  end,
+  keys = {
+    { '<leader>gt', function() require('telescope.builtin').git_status() end, {} },
+    { '<leader>pf', function() require('telescope.builtin').find_files() end, {} },
+    { '<leader>ps', function() require('telescope.builtin').live_grep() end, {} },
+    { '<leader>gb', function() require('telescope.builtin').git_branches() end, {} },
+  }
 }

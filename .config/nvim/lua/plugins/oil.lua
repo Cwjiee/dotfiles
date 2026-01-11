@@ -1,5 +1,8 @@
 return {
   'stevearc/oil.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("oil").setup({
       skip_confirm_for_simple_edits = true,
@@ -19,6 +22,7 @@ return {
       }
     })
   end,
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  lazy = false,
+  keys = {
+    { "-", "<CMD>Oil<CR>", desc = "Open parent directory" },
+  },
 }
