@@ -1,0 +1,16 @@
+#!/bin/bash
+OS=$(uname)
+
+if [[ $OS -eq "Linux" ]] then
+  IP_ADDR=$(hostname -I | awk '{print $1}')
+else
+  IP_ADDR=$(ipconfig getifaddr en0)
+fi
+
+echo "input url:"
+read url
+# URL="http://$IP_ADDR:$PORT"
+URL=$(echo "$url" | sed "s/localhost/$IP_ADDR/")
+
+echo "Scanning URL: $URL"
+qrencode -t ansiutf8 "$URL"

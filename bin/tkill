@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ $TMUX ]]; then
+  tmux kill-session -t "$@"
+else
+  echo "not in tmux session"
+fi

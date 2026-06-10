@@ -11,5 +11,16 @@ return {
     },
     opts = {},
   },
-  {"folke/zen-mode.nvim", cmd = "ZenMode"}
+  {"folke/zen-mode.nvim", cmd = "ZenMode"},
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  }
 }

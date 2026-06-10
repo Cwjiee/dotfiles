@@ -1,27 +1,40 @@
 theme = Catppuccin Mocha
+
 font-family = Maple Mono NF
 font-size = 15
+title = " "
 
 quick-terminal-position = center
 mouse-hide-while-typing = true
+focus-follows-mouse = true
 # window-save-state = always
 
 background-opacity = 0.85
-background-blur = true
+# background-blur = true
+unfocused-split-opacity = 1
+split-divider-color = #b4befe
 
-window-subtitle = false
+window-subtitle = working-directory
 window-padding-balance = true
 
-macos-icon = retro
+macos-icon = xray
+macos-icon-frame = beige
 # macos-icon = custom
 # macos-custom-icon = ~/.config/ghostty/ghostty.png
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
+# macos-non-native-fullscreen = visible-menu
 
-# cursor-style = block
-# cursor-style-blink = true
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+link-previews = true
 
-# custom-shader = ./trails/cursor_trail.glsl
+notify-on-command-finish = always
+app-notifications = clipboard-copy,config-reload
+notify-on-command-finish-action = bell,notify
+
+custom-shader = ./trails/cursor_trail.glsl
 # custom-shader = ./trails/subtle_trail.glsl
 # custom-shader = ./trails/amber_cursor.glsl
 # custom-shader = ./ghostty-shaders/glitchy.glsl

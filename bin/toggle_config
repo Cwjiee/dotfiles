@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+	echo "wrong number of arguments"
+fi
+
+if [ "$@" == "off" ]; then
+	mv ~/.config/nvim ~/.config/nvim_off
+fi
+
+if [ "$@" == "on" ]; then
+	mv ~/.config/nvim_off ~/.config/nvim
+fi

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# let user choose option
+
+echo "1: fetch links"
+echo "2: open links"
+echo -n "option: "
+read option
+
+if [[ "$option" -eq 1 ]]; then
+  # append all urls to file
+
+  URLS=()
+  echo "Enter the urls:"
+
+  while read url
+  do
+    URLS+=($url)
+    echo $url >> confidential_info
+  done
+
+  echo
+  echo "urls fetched:"
+
+  for url in ${URLS[@]}; do
+    echo $url
+  done
+
+else
+  # open all urls from file to browser
+  cd ~/bin/url-keys
+
+  while read url
+  do
+    if [[ "$url" == *"#"* ]]; then
+      continue
+    fi
+
+    open -n -a "Firefox" --args -private-window "$url"
+    sleep 0.2s
+  done <confidential_info
+fi
+

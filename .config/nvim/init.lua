@@ -3,6 +3,7 @@ if vim.loader then
 end
 vim.cmd("syntax off")
 
+vim.cmd("filetype plugin on")
 require("config.lazy")
 require("config.keymaps")
 require("config.options")

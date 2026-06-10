@@ -1,0 +1,31 @@
+#!/bin/bash
+
+LIST_FILE="$HOME/.config/projects.txt"
+
+if [[ ! -f "$LIST_FILE" ]]; then
+    echo "Error: $LIST_FILE not found!"
+    exit 1
+fi
+
+selected=$(cat "$LIST_FILE" | fzf \
+    --height=40% \
+    --layout=reverse \
+    --border \
+    --prompt="Select Project: ")
+
+# if [[ -z "$selected" ]] && exit 0
+
+project_name=$(basename "$selected")
+
+GHOSTTY_CMD="/Applications/Ghostty.app/Contents/MacOS/ghostty"
+
+$GHOSTTY_CMD \
+    --gtk-single-instance=false \
+    --working-directory="$selected" \
+    --env="PROJECT_ROOT=$selected" \
+    --env="PROJECT_NAME=$project_name" \
+    --env="PROJECT_SHELL=1" &
+disown
+# osascript -e 'tell application "System Events" to keystroke "w" using {command down}'
+sleep 0.3 && kill -9 $PPID &
+exit 0

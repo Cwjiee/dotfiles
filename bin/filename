@@ -1,0 +1,15 @@
+SERVER_CMD := npm run dev	# Command to start server
+CLIENT_CMD := npm run start          # Command to start client
+SERVER_PORT := 8000 						# Server port to check
+SERVER_HOST := localhost            				# Server host
+
+purple := \033[0;32m
+reset = \033[0m
+RED := 
+CYAN := 
+MAGENTA := 
+RESET := 
+
+dev:
+	@echo "=== Starting Development Environment ==="; 	(  2>&1 | sed -l "s/^/[server] /" ) & 	SERVER_PID=72000!; 	echo "Server running with PID: 72000SERVER_PID"; 	echo "Waiting for server on port ..."; 	while ! nc -z  ; do sleep 0.5; done; 	echo "Server ready! Starting client..."; 	(  2>&1 | sed -l "s/^/[client] /" ) & 	CLIENT_PID=72000!; 	echo "Client running with PID: 72000CLIENT_PID"; 	wait
+
